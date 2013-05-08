@@ -26,6 +26,12 @@ use MongoDBViewrLite::Web::View;
     sub create_view { $view }
 }
 
+use MongoDB;
+sub mongodb {
+    my ($c,) = @_;
+    MongoDB::Connection->new( host => $c->config->{MongoDB}->{host}, port => $c->config->{MongoDB}->{port} );
+}
+
 # for your security
 __PACKAGE__->add_trigger(
     AFTER_DISPATCH => sub {

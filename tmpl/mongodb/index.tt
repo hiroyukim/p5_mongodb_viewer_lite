@@ -1,0 +1,54 @@
+[% WRAPPER 'include/layout.tt' %]
+
+<h1>Info</h1>
+
+<h2>database.collection</h2>
+
+<ul>
+[% FOR database_info IN database_info_list %]
+    <li>[%  database_info.database_name %]</li>
+    <ul>
+        [% FOR collection_info IN database_info.collection_info_list %]
+            <li><a href="/mongodb/database/collection/document/list?database_name=[% database_info.database_name %]&collection_name=[% collection_info.collection_name %]">[% collection_info.collection_name %]([
+% collection_info.collection_count %])</a></li>
+        [% END %]
+    </ul>
+[% END %]
+</ul>
+
+<h2>connection</h2>
+
+<table >
+    <tr>
+        <th>host</th>
+        <td>[% c().config().MongoDB.host %]</td>
+    </tr>
+    <tr>
+        <th>port</th>
+        <td>[% c().config().MongoDB.port %]</td>
+    </tr>
+</table>
+
+<h2>build info</h2>
+
+<table >
+[% FOR build_info_key IN build_info.keys().sort() %]
+    <tr>
+        <th>[% build_info_key %]</th>
+        <td>[% create_table_form_ref_data(build_info.$build_info_key) | mark_raw %]</td>
+    </tr>
+[% END %]
+</table>
+
+<h2>Server Status</h2>
+
+<table >
+[% FOR serverStatus_key IN serverStatus.keys().sort() %]
+    <tr>
+        <th>[% serverStatus_key %]</th>
+        <td>[% create_table_form_ref_data(serverStatus.$serverStatus_key) | mark_raw %]</td>
+    </tr>
+[% END %]
+</table>
+
+[% END %]

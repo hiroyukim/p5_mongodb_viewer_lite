@@ -1,0 +1,23 @@
+[% WRAPPER 'include/layout.tt' %]
+
+<h2><a href="/mongodb/database/collection/document/list?database_name=[% c().req().param('database_name') %]&collection_name=[% c().req().param('collection_name') %]">[% c().req().param('database_name') %].[% c().req().param('collection_name') %]([% count %])</a></h2>
+
+[% INCLUDE 'include/pager.tt' %]
+
+<table>
+[% WHILE( document = document_list.next) %]
+    <tr>
+        <td>
+            <table>
+                [% FOR name IN document.keys().sort() %]
+                    <tr>
+                        <th>[% name %]</th>
+                        <td>[% create_table_form_ref_data(document.$name) | mark_raw  %]</td>
+                    </tr>
+                [% END %]
+            </table>
+        </td>
+    </tr>
+[% END %]
+</table>
+[% END %]

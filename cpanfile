@@ -10,6 +10,9 @@ requires 'Plack::Middleware::Session'      => '0';
 requires 'Plack::Session'                  => '0.14';
 requires 'Test::WWW::Mechanize::PSGI'      => '0';
 requires 'Time::Piece'                     => '1.20';
+requires 'MongoDB'                         => '0.700.0';
+requires 'Tie::IxHash'                     => '1.23';
+requires 'Data::Page'                      => '2.02';
 
 on 'configure' => sub {
    requires 'Module::Build'     => '0.38';

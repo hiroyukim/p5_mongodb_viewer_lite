@@ -9,4 +9,8 @@ my $dbpath = File::Spec->catfile($basedir, 'db', 'development.db');
             sqlite_unicode => 1,
         }
     ],
+    'MongoDB' => {
+        host => 'localhost',
+        port => '27017',
+    },
 };
