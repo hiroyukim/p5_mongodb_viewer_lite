@@ -69,6 +69,3 @@ any '/mongodb/database/collection/document/list' => sub {
 };
 
 1;
-
-
-1;
