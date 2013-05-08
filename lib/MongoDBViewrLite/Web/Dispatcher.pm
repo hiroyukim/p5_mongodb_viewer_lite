@@ -61,7 +61,7 @@ any '/mongodb/database/collection/document/list' => sub {
         document_count  => $document_count,
         document_list   => $document_list,
         pager           => Data::Page->new(
-            $count, #total_entries
+            $document_count, #total_entries
             $limit, #entries_per_page
             $page, #current_page
         ),

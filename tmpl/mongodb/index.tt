@@ -9,8 +9,7 @@
     <li>[%  database_info.database_name %]</li>
     <ul>
         [% FOR collection_info IN database_info.collection_info_list %]
-            <li><a href="/mongodb/database/collection/document/list?database_name=[% database_info.database_name %]&collection_name=[% collection_info.collection_name %]">[% collection_info.collection_name %]([
-% collection_info.collection_count %])</a></li>
+            <li><a href="/mongodb/database/collection/document/list?database_name=[% database_info.database_name %]&collection_name=[% collection_info.collection_name %]">[% collection_info.collection_name %]([% collection_info.collection_count %])</a></li>
         [% END %]
     </ul>
 [% END %]
