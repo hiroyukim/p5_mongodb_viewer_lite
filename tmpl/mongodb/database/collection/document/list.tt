@@ -1,6 +1,6 @@
 [% WRAPPER 'include/layout.tt' %]
 
-<h2><a href="/mongodb/database/collection/document/list?database_name=[% c().req().param('database_name') %]&collection_name=[% c().req().param('collection_name') %]">[% c().req().param('database_name') %].[% c().req().param('collection_name') %]([% count %])</a></h2>
+<h2><a href="/mongodb/database/collection/document/list?database_name=[% c().req().param('database_name') %]&collection_name=[% c().req().param('collection_name') %]">[% c().req().param('database_name') %].[% c().req().param('collection_name') %]([% document_count %])</a></h2>
 
 [% INCLUDE 'include/pager.tt' %]
 
