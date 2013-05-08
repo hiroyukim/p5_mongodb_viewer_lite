@@ -13,6 +13,8 @@ requires 'Time::Piece'                     => '1.20';
 requires 'MongoDB'                         => '0.700.0';
 requires 'Tie::IxHash'                     => '1.23';
 requires 'Data::Page'                      => '2.02';
+requires 'Server::Starter'                 => '0.12';
+requires 'Starlet'                         => '0.18';
 
 on 'configure' => sub {
    requires 'Module::Build'     => '0.38';
